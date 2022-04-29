@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Development docker file
+Dockerfile
+
+# Test pdfs
+*pdf
