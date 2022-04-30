@@ -8,15 +8,15 @@ g_is_silent = False
 
 def parse_command_line_arguments():
     parser = argparse.ArgumentParser( description = "Brute-force pdf decryptor." )
-    parser.add_argument("-f,--file, ", dest="file_loc",
-                                        action="store",
-                                        help="PDF file location" )
-    parser.add_argument("-r,--regexp", dest="language",
-                                        action="store",
-                                        help="Regular expression that generates the language used for brute forcing the PDF password.")
-    parser.add_argument("-s,--silent", dest="is_silent",
-                                        action="store_true",
-                                        help="If set the only output will be the found password or exists with 1 if not found")
+    parser.add_argument("-f", "--file",     dest="file_loc",
+                                            action="store",
+                                            help="PDF file location" )
+    parser.add_argument("-r", "--regexp",   dest="language",
+                                            action="store",
+                                            help="Regular expression that generates the language used for brute forcing the PDF password.")
+    parser.add_argument("-s", "--silent",   dest="is_silent",
+                                            action="store_true",
+                                            help="If set the only output will be the found password or exists with 1 if not found")
     return parser.parse_args()
 
 def get_param( p, input_text ):
@@ -67,4 +67,5 @@ def main():
         print( "PDF file is not encrypted." )
         exit( 0 )
 
-main()
+if __name__ == "__main__":
+    main()
